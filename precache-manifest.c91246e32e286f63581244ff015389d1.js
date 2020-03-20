@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9d36efaa494092afc5161083a2cbc76f",
+    "revision": "c1ce2fb635f76fd6b76d11c60eb8ae8b",
     "url": "/OrcaDashboard/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/OrcaDashboard/static/css/2.9c5146eb.chunk.css"
   },
   {
-    "revision": "bd8dfad1ff0ee3e3c6a0",
+    "revision": "4a094e4ceed91b82338e",
     "url": "/OrcaDashboard/static/css/main.3633a8ad.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/OrcaDashboard/static/js/2.e03f0914.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bd8dfad1ff0ee3e3c6a0",
-    "url": "/OrcaDashboard/static/js/main.8497a26e.chunk.js"
+    "revision": "4a094e4ceed91b82338e",
+    "url": "/OrcaDashboard/static/js/main.ec4b718c.chunk.js"
   },
   {
     "revision": "54e9e679c811e70e49f6",
@@ -40,7 +40,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/OrcaDashboard/static/media/CircularStd-Medium.4fcdd97f.otf"
   },
   {
-    "revision": "be2ed1511f856f57648ebb4d1c0a1b96",
-    "url": "/OrcaDashboard/static/media/user-img-placeholder.be2ed151.jpeg"
+    "revision": "6db09181ed93f7e8f2dac478623e3629",
+    "url": "/OrcaDashboard/static/media/user.6db09181.png"
   }
 ]);

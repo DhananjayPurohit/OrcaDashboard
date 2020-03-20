@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/OrcaDashboard/static/css/main.3633a8ad.chunk.css",
-    "main.js": "/OrcaDashboard/static/js/main.8497a26e.chunk.js",
-    "main.js.map": "/OrcaDashboard/static/js/main.8497a26e.chunk.js.map",
+    "main.js": "/OrcaDashboard/static/js/main.ec4b718c.chunk.js",
+    "main.js.map": "/OrcaDashboard/static/js/main.ec4b718c.chunk.js.map",
     "runtime-main.js": "/OrcaDashboard/static/js/runtime-main.3248cb2e.js",
     "runtime-main.js.map": "/OrcaDashboard/static/js/runtime-main.3248cb2e.js.map",
     "static/css/2.9c5146eb.chunk.css": "/OrcaDashboard/static/css/2.9c5146eb.chunk.css",
     "static/js/2.e03f0914.chunk.js": "/OrcaDashboard/static/js/2.e03f0914.chunk.js",
     "static/js/2.e03f0914.chunk.js.map": "/OrcaDashboard/static/js/2.e03f0914.chunk.js.map",
     "index.html": "/OrcaDashboard/index.html",
-    "precache-manifest.8f8ca2783f5723d9951a8f7b3705c868.js": "/OrcaDashboard/precache-manifest.8f8ca2783f5723d9951a8f7b3705c868.js",
+    "precache-manifest.c91246e32e286f63581244ff015389d1.js": "/OrcaDashboard/precache-manifest.c91246e32e286f63581244ff015389d1.js",
     "service-worker.js": "/OrcaDashboard/service-worker.js",
     "static/css/2.9c5146eb.chunk.css.map": "/OrcaDashboard/static/css/2.9c5146eb.chunk.css.map",
     "static/css/main.3633a8ad.chunk.css.map": "/OrcaDashboard/static/css/main.3633a8ad.chunk.css.map",
     "static/js/2.e03f0914.chunk.js.LICENSE.txt": "/OrcaDashboard/static/js/2.e03f0914.chunk.js.LICENSE.txt",
     "static/media/style.css": "/OrcaDashboard/static/media/CircularStd-Medium.4fcdd97f.otf",
-    "static/media/user-img-placeholder.jpeg": "/OrcaDashboard/static/media/user-img-placeholder.be2ed151.jpeg"
+    "static/media/user.png": "/OrcaDashboard/static/media/user.6db09181.png"
   },
   "entrypoints": [
     "static/js/runtime-main.3248cb2e.js",
     "static/css/2.9c5146eb.chunk.css",
     "static/js/2.e03f0914.chunk.js",
     "static/css/main.3633a8ad.chunk.css",
-    "static/js/main.8497a26e.chunk.js"
+    "static/js/main.ec4b718c.chunk.js"
   ]
 }
