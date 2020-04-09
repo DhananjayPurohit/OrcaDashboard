@@ -7,6 +7,8 @@ Steps to run the project:
 After cloning the repository, use yarn install to install all the dependencies needed.<br />
 Run yarn start to run project in development server. (Refer to more scripts mentioned below)
 
+**Note: Use your Google Sheets API Key in src/config.js**.
+
 ## Available Scripts
 
 In the project directory, you can run:
