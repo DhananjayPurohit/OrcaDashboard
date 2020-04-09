@@ -1,71 +1,39 @@
-export const Barspec = {
-    "$schema": "https://vega.github.io/schema/vega/v5.json",
+  export const Barspec = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
     "title": "Species call counts",
     "description": "A basic stacked bar chart example.",
-    "width": 1200,
+    "width": 1150,
     "height": 300,
     "padding": 5,
     "background": "transparent",
-    "data": [
-      {
-        "name": "table",
-        "transform": [
-          {
-            "type": "stack",
-            "groupby": ["x"],
-            "sort": {"field": "c"},
-            "field": "y"
-          }
-        ]
-      }
-    ],
-    "scales": [
-      {
-        "name": "x",
-        "type": "band",
-        "range": "width",
-        "domain": {"data": "table", "field": "x"}
+    "data": {
+      "name": "table",
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "date_time",
+        "type": "temporal",
+        "timeUnit": "yearmonthdatehoursminutes",
+        "scale": {"type": "utc"},
+        "axis": {"labelAngle": 15},
+        "title": "Date-time"
       },
-      {
-        "name": "y",
-        "type": "linear",
-        "range": "height",
-        "nice": true, "zero": true,
-        "domain": {"data": "table", "field": "y1"}
+      "y": {"field": "calls", "type": "quantitative", "title": "Calls per 15 minutes"},
+      "color": {
+        "field": "type",
+        "type": "nominal",
+        "scale": {
+          "domain": ["Blue_whale", "Fin_whale"],
+        },
+        "legend": {"title": "Type"}
       },
-      {
-        "name": "color",
-        "type": "ordinal",
-        "range": "category",
-        "domain": {"data": "table", "field": "c"}
-      }
-    ],
-  
-    "axes": [
-      {"orient": "bottom", "scale": "x", "zindex": 1, "title": "Date-time"},
-      {"orient": "left", "scale": "y", "zindex": 1, "title": "Calls per 15 minutes"}
-    ],
-    "marks": [
-      {
-        "type": "rect",
-        "from": {"data": "table"},
-        "encode": {
-          "enter": {
-            "x": {"scale": "x", "field": "x"},
-            "width": {"scale": "x", "band": 1, "offset": -1},
-            "y": {"scale": "y", "field": "y0"},
-            "y2": {"scale": "y", "field": "y1"},
-            "fill": {"scale": "color", "field": "c"}
-          },
-          "update": {
-            "fillOpacity": {"value": 1}
-          },
-          "hover": {
-            "fillOpacity": {"value": 0.5}
-          }
-        }
-      }
-    ]
+      "tooltip": [
+        {"field": "date_time", "type": "temporal", "timeUnit": "yearmonthdatehoursminutes"},
+        {"field": "calls", "type": "quantitative"},
+        {"field": "type", "type": "nominal"}
+      ]
+    }
   }
 
   export const bwDielspec = {
@@ -328,7 +296,7 @@ export const Barspec = {
     "legends": [
       {
         "fill": "color",
-        "title": "Legends",
+        "title": "Type",
         "orient": "none",
         "padding": {"value": 10},
         "encode": {

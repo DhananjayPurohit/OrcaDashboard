@@ -52,8 +52,8 @@ class App extends Component {
       var dayOnly = dateOnly[0].split("/");
       var hrOnly = dateOnly[1].split(":");
       var hr = parseInt(hrOnly[0]) + hrOnly[1] / 60;
-      arrtab.push({ x: arr[j]["Date_time"], y: arr[j]["Blue_whale"], c: 0 });
-      arrtab.push({ x: arr[j]["Date_time"], y: arr[j]["Fin_whale"], c: 1 });
+      arrtab.push({ date_time : arr[j]["Date_time"], calls: arr[j]["Blue_whale"], type: "Blue_whale" });
+      arrtab.push({ date_time : arr[j]["Date_time"], calls: arr[j]["Fin_whale"], type: "Fin_whale" });
       bwarrdiel.push({
         HourOfDay: hr,
         Day: dayOnly[1],
