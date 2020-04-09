@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1107a1300381af3ceaa59869f9ba0a7a",
+    "revision": "3d417f115f395b459c58022085b36cbd",
     "url": "/OrcaDashboard/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/OrcaDashboard/static/css/2.9c5146eb.chunk.css"
   },
   {
-    "revision": "1605b54e00b96b0e52e2",
+    "revision": "6572a46729438356618f",
     "url": "/OrcaDashboard/static/css/main.3633a8ad.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/OrcaDashboard/static/js/2.0dd8eaa8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1605b54e00b96b0e52e2",
-    "url": "/OrcaDashboard/static/js/main.771cdcbf.chunk.js"
+    "revision": "6572a46729438356618f",
+    "url": "/OrcaDashboard/static/js/main.d68bb324.chunk.js"
   },
   {
     "revision": "54e9e679c811e70e49f6",
