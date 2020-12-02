@@ -126,6 +126,7 @@ class App extends Component {
     fetch(url)
       .then(response => response.json())
       .then(data => {
+        console.log(data)
         let batchRowValues = data.valueRanges[0].values;
 
         const rows = [];
