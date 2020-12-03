@@ -6,8 +6,7 @@ import { Container, Nav } from "./styled-components";
 import { Vega } from "react-vega";
 import UserImg from "./assets/images/user.png";
 import { Barspec, bwDielspec, fwDielspec, pieChartspec, pieChart } from "./charts";
-
-const url = `https://sheets.googleapis.com/v4/spreadsheets/${config.spreadsheetId}/values:batchGet?ranges=Sheet1&majorDimension=ROWS&key=${config.apiKey}`;
+const url = `https://sheets.googleapis.com/v4/spreadsheets/${config.spreadsheetId}/values:batchGet?ranges=Sheet1!A:A&majorDimension=ROWS&key=${config.apiKey}`;
 
 class App extends Component {
   constructor() {
@@ -24,11 +23,53 @@ class App extends Component {
       barData: { table: [] },
       bwdielData: { source: [] },
       fwdielData: { source: [] },
-      avgCallsTrend: []
+      avgCallsTrend: [],
+      startDate: null
     };
   }
 
   getData = arg => {
+    const multifactor=96;
+    const weekstartDate=new Date(arg.split(" - ")[0]);
+    const weekendDate=new Date(arg.split(" - ")[1]);
+    const diffindaysfromstart=(weekstartDate.getTime()-new Date(this.state.startDate).getTime())/(1000 * 3600 * 24);
+    const diffindaysfromend=(weekendDate.getTime()-new Date(this.state.startDate))/(1000 * 3600 * 24);
+    console.log(diffindaysfromstart);
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${config.spreadsheetId}/values:batchGet?ranges=Sheet1!A${(diffindaysfromstart)*multifactor+1}:D${(diffindaysfromend+1)*multifactor}&majorDimension=ROWS&key=${config.apiKey}`;
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        let batchRowValues = data.valueRanges[0].values;
+
+        const rows = [];
+        for (let i = 1; i < batchRowValues.length; i++) {
+          let rowObject = {};
+          for (let j = 0; j < batchRowValues[i].length; j++) {
+            rowObject[batchRowValues[0][j]] = batchRowValues[i][j];
+          }
+          rows.push(rowObject);
+        }
+
+        // dropdown options
+        // let dropdownOptions = [];
+        // for (let i = 0; i < rows.length; i++) {
+        //   var dateStr = rows[i].Date_time;
+        //   var dateOnly = dateStr.split(" ");
+        //   dropdownOptions.push(dateOnly[0]);
+        // }
+
+        // dropdownOptions = Array.from(new Set(dropdownOptions)).reverse();
+
+        // this.setState(
+        //   {
+        //     items: rows,
+        //     dropdownOptions: dropdownOptions,
+        //     selectedValue: "03/18/20"
+        //   },
+        //   () => this.getData("03/18/20")
+        // );
+      });
     // google sheets data
     const arr = this.state.items;
     const arrLen = arr.length;
@@ -129,32 +170,36 @@ class App extends Component {
         console.log(data)
         let batchRowValues = data.valueRanges[0].values;
 
-        const rows = [];
-        for (let i = 1; i < batchRowValues.length; i++) {
-          let rowObject = {};
-          for (let j = 0; j < batchRowValues[i].length; j++) {
-            rowObject[batchRowValues[0][j]] = batchRowValues[i][j];
-          }
-          rows.push(rowObject);
-        }
+        // const rows = [];
+        // for (let i = 1; i < batchRowValues.length; i++) {
+        //   let rowObject = {};
+        //   for (let j = 0; j < batchRowValues[i].length; j++) {
+        //     rowObject[batchRowValues[0][j]] = batchRowValues[i][j];
+        //   }
+        //   rows.push(rowObject);
+        // }
 
         // dropdown options
         let dropdownOptions = [];
-        for (let i = 0; i < rows.length; i++) {
-          var dateStr = rows[i].Date_time;
-          var dateOnly = dateStr.split(" ");
-          dropdownOptions.push(dateOnly[0]);
+        for (let i = 1; i < batchRowValues.length; i+=96*7) {
+          var date1Str = batchRowValues[i][0];
+          var date1Only = date1Str.split(" ");
+          var date2Str = (i+96*6>batchRowValues.length)?(batchRowValues[batchRowValues.length-1][0]):(batchRowValues[i+96*6][0]);
+          var date2Only = date2Str.split(" ");
+          dropdownOptions.push(date1Only[0]+" - "+date2Only[0]);
         }
 
         dropdownOptions = Array.from(new Set(dropdownOptions)).reverse();
-
+        
+        console.log(dropdownOptions)
         this.setState(
           {
-            items: rows,
+            // items: rows,
             dropdownOptions: dropdownOptions,
-            selectedValue: "03/18/20"
+            selectedValue: dropdownOptions[0],
+            startDate: dropdownOptions[dropdownOptions.length-1]
           },
-          () => this.getData("03/18/20")
+          () => this.getData(this.state.selectedValue)
         );
       });
   }
@@ -179,7 +224,7 @@ class App extends Component {
 
         {/* static navbar - bottom */}
         <Nav className="navbar fixed-top nav-secondary is-dark is-light-text">
-          <Container className="text-medium">Summary</Container>
+          <Container className="text-medium">Summary / Weekly</Container>
           <Container className="navbar-nav ml-auto">
             <Dropdown
               className="pr-2 custom-dropdown"
