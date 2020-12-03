@@ -30,27 +30,28 @@ class App extends Component {
 
   getData = arg => {
     const multifactor=96;
+    const startDate=new Date(this.state.startDate.split(" ")[0]);
     const weekstartDate=new Date(arg.split(" - ")[0]);
     const weekendDate=new Date(arg.split(" - ")[1]);
-    const diffindaysfromstart=(weekstartDate.getTime()-new Date(this.state.startDate).getTime())/(1000 * 3600 * 24);
-    const diffindaysfromend=(weekendDate.getTime()-new Date(this.state.startDate))/(1000 * 3600 * 24);
-    console.log(diffindaysfromstart);
+    const diffindaysfromstart=(weekstartDate.getTime()-startDate.getTime())/(1000 * 3600 * 24);
+    const diffindaysfromend=(weekendDate.getTime()-startDate.getTime())/(1000 * 3600 * 24);
+    console.log(((diffindaysfromstart)*multifactor+1)+" "+((diffindaysfromend+1)*multifactor));
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${config.spreadsheetId}/values:batchGet?ranges=Sheet1!A${(diffindaysfromstart)*multifactor+1}:D${(diffindaysfromend+1)*multifactor}&majorDimension=ROWS&key=${config.apiKey}`;
     fetch(url)
       .then(response => response.json())
       .then(data => {
         console.log(data)
         let batchRowValues = data.valueRanges[0].values;
-
+        console.log(batchRowValues)
         const rows = [];
-        for (let i = 1; i < batchRowValues.length; i++) {
+        for (let i = 0; i < batchRowValues.length; i++) {
           let rowObject = {};
-          for (let j = 0; j < batchRowValues[i].length; j++) {
-            rowObject[batchRowValues[0][j]] = batchRowValues[i][j];
-          }
+          rowObject["Date_time"] = batchRowValues[i][0];
+          rowObject["Blue_whale"] = batchRowValues[i][1];
+          rowObject["Fin_whale"] = batchRowValues[i][2];
+          rowObject["Other"] = batchRowValues[i][3];
           rows.push(rowObject);
         }
-
         // dropdown options
         // let dropdownOptions = [];
         // for (let i = 0; i < rows.length; i++) {
@@ -61,16 +62,16 @@ class App extends Component {
 
         // dropdownOptions = Array.from(new Set(dropdownOptions)).reverse();
 
-        // this.setState(
-        //   {
-        //     items: rows,
-        //     dropdownOptions: dropdownOptions,
-        //     selectedValue: "03/18/20"
-        //   },
-        //   () => this.getData("03/18/20")
-        // );
+        this.setState(
+          {
+            items: rows,
+          },
+          () => this.populateDashboard()
+        );
       });
     // google sheets data
+  };
+  populateDashboard(){
     const arr = this.state.items;
     const arrLen = arr.length;
 
@@ -86,6 +87,7 @@ class App extends Component {
     let selectedValue = null;
     let count = 0;
 
+    console.log(arr);
     for (let j = 0; j < arrLen; j++) {
       
       var dateStr = arr[j]["Date_time"];
@@ -110,12 +112,10 @@ class App extends Component {
     for (let i = 0; i < arrLen; i++) {
       var dateStr = arr[i]["Date_time"];
       var dateOnly = dateStr.split(" ");
-      if (arg === dateOnly[0]) {
         count += 1;
         bwCalls += parseInt(arr[i].Blue_whale);
         fwCalls += parseInt(arr[i].Fin_whale);
         otCalls += parseInt(arr[i].Other);
-      }
     }
     var bwCallsinhr = formatNum((bwCalls / count) * 4);
     var fwCallsinhr = formatNum((fwCalls / count) * 4);
@@ -141,8 +141,6 @@ class App extends Component {
     });
     totalCalls = bwCalls + fwCalls + otCalls;
 
-    selectedValue = arg;
-
     // setting state
     this.setState({
       bwCalls: bwCallsinhr,
@@ -153,11 +151,9 @@ class App extends Component {
       pieData: { table: piearr},
       barData: { table: arrtab },
       bwdielData: { source: bwarrdiel },
-      fwdielData: { source: fwarrdiel },
-      selectedValue: selectedValue
+      fwdielData: { source: fwarrdiel }
     });
-  };
-
+  }
   updateDashboard = event => {
     this.getData(event.value);
     this.setState({ selectedValue: event.value });
