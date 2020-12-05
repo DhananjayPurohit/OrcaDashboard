@@ -1,6 +1,5 @@
 const puppeteer = require("puppeteer");
 const fs = require("fs");
-const { google } = require("googleapis");
 const { GoogleSpreadsheet } = require("google-spreadsheet");
 
 async function getVisual() {
