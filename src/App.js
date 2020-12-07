@@ -3,7 +3,7 @@ import Dropdown from "react-dropdown";
 import formatNum from "./formatNumber";
 import { Container, Nav } from "./styled-components";
 import { Vega } from "react-vega";
-import UserImg from "./assets/images/user.png";
+// import UserImg from "./assets/images/user.png";
 import { Barspec, bwDielspec, fwDielspec, pieChartspec, pieChart } from "./charts";
 
 const url = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.REACT_APP_spreadsheetId}/values:batchGet?ranges=Sheet1!A:A&majorDimension=ROWS&key=${process.env.REACT_APP_apiKey}`;
@@ -52,15 +52,6 @@ class App extends Component {
           rowObject["Other"] = batchRowValues[i][3];
           rows.push(rowObject);
         }
-        // dropdown options
-        // let dropdownOptions = [];
-        // for (let i = 0; i < rows.length; i++) {
-        //   var dateStr = rows[i].Date_time;
-        //   var dateOnly = dateStr.split(" ");
-        //   dropdownOptions.push(dateOnly[0]);
-        // }
-
-        // dropdownOptions = Array.from(new Set(dropdownOptions)).reverse();
 
         this.setState(
           {
@@ -166,16 +157,6 @@ class App extends Component {
         console.log(data)
         let batchRowValues = data.valueRanges[0].values;
 
-        // const rows = [];
-        // for (let i = 1; i < batchRowValues.length; i++) {
-        //   let rowObject = {};
-        //   for (let j = 0; j < batchRowValues[i].length; j++) {
-        //     rowObject[batchRowValues[0][j]] = batchRowValues[i][j];
-        //   }
-        //   rows.push(rowObject);
-        // }
-
-        // dropdown options
         let dropdownOptions = [];
         for (let i = 1; i < batchRowValues.length; i+=96*7) {
           var date1Str = batchRowValues[i][0];
@@ -209,12 +190,12 @@ class App extends Component {
             Orca Dashboard
           </Container>
           <Container className="navbar-nav ml-auto">
-            <Container className="user-detail-section">
+            {/* <Container className="user-detail-section">
               <span className="pr-2">Your Profile</span>
               <span className="img-container">
                 <img src={UserImg} className="rounded-circle" alt="user" />
               </span>
-            </Container>
+            </Container> */}
           </Container>
         </Nav>
 
