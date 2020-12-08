@@ -206,6 +206,15 @@ body {
   top: 18px;
 }
 
+.button {
+  background: white;
+  color: black;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid black;
+  border-radius: 3px;
+}
 /* media queries */
 @media screen and (max-width: 991px) {
   .container-fluid.pr-5, .container-fluid.pl-5 {
