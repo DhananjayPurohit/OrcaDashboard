@@ -3,7 +3,6 @@
 https://dhananjaypurohit.github.io/OrcaDashboard/
 
 A dashboard to visualize Woods Hole Oceanographic Institution marine mammal detection data(http://dcs.whoi.edu/sb1119/sb1119_buoy_html/sb1119_buoy_summary.html) in the form of bar graphs, pie charts, diel plots.
-https://dhananjaypurohit.github.io/OrcaDashboard/
 
 Steps to run the project:
 
