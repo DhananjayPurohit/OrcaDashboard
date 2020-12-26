@@ -1,3 +1,6 @@
+const puppeteer = require("puppeteer");
+const { GoogleSpreadsheet } = require("google-spreadsheet");
+
 module.exports = async function (context, myTimer) {
     var timeStamp = new Date().toISOString();
     
@@ -6,7 +9,9 @@ module.exports = async function (context, myTimer) {
         context.log('JavaScript is running late!');
     }
     try {
-        const browser = await puppeteer.launch();
+      const browser = await puppeteer.connect({
+        browserWSEndpoint: 'wss://chrome.browserless.io/'
+      });
         const page = await browser.newPage();
         // await page.setDefaultNavigationTimeout(0);
         const doc = new GoogleSpreadsheet(

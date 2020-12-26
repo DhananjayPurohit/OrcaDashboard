@@ -11,6 +11,8 @@ After cloning the repository,
 2. use npm install to install all the dependencies needed.<br>
 3. Run npm start to run project in development server. <br>
 
+The folder `Azure-function` contains a timer trigger function to scrap data and load into spreadsheet once in a day(at 10:30 UTC).
+
 
 
 
