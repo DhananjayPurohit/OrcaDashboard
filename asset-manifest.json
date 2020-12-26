@@ -1,27 +1,26 @@
 {
   "files": {
-    "main.css": "/OrcaDashboard/static/css/main.3633a8ad.chunk.css",
-    "main.js": "/OrcaDashboard/static/js/main.d68bb324.chunk.js",
-    "main.js.map": "/OrcaDashboard/static/js/main.d68bb324.chunk.js.map",
-    "runtime-main.js": "/OrcaDashboard/static/js/runtime-main.3248cb2e.js",
-    "runtime-main.js.map": "/OrcaDashboard/static/js/runtime-main.3248cb2e.js.map",
-    "static/css/2.9c5146eb.chunk.css": "/OrcaDashboard/static/css/2.9c5146eb.chunk.css",
-    "static/js/2.0dd8eaa8.chunk.js": "/OrcaDashboard/static/js/2.0dd8eaa8.chunk.js",
-    "static/js/2.0dd8eaa8.chunk.js.map": "/OrcaDashboard/static/js/2.0dd8eaa8.chunk.js.map",
+    "main.css": "/OrcaDashboard/static/css/main.0a7e4a0b.chunk.css",
+    "main.js": "/OrcaDashboard/static/js/main.8cdd945d.chunk.js",
+    "main.js.map": "/OrcaDashboard/static/js/main.8cdd945d.chunk.js.map",
+    "runtime-main.js": "/OrcaDashboard/static/js/runtime-main.d7192019.js",
+    "runtime-main.js.map": "/OrcaDashboard/static/js/runtime-main.d7192019.js.map",
+    "static/css/2.129d217f.chunk.css": "/OrcaDashboard/static/css/2.129d217f.chunk.css",
+    "static/js/2.52e05c3e.chunk.js": "/OrcaDashboard/static/js/2.52e05c3e.chunk.js",
+    "static/js/2.52e05c3e.chunk.js.map": "/OrcaDashboard/static/js/2.52e05c3e.chunk.js.map",
     "index.html": "/OrcaDashboard/index.html",
-    "precache-manifest.9529e7f8985064f5b1d7ed2cef9960c6.js": "/OrcaDashboard/precache-manifest.9529e7f8985064f5b1d7ed2cef9960c6.js",
+    "precache-manifest.950aa30cf0507af206402a7cd9bdb4b2.js": "/OrcaDashboard/precache-manifest.950aa30cf0507af206402a7cd9bdb4b2.js",
     "service-worker.js": "/OrcaDashboard/service-worker.js",
-    "static/css/2.9c5146eb.chunk.css.map": "/OrcaDashboard/static/css/2.9c5146eb.chunk.css.map",
-    "static/css/main.3633a8ad.chunk.css.map": "/OrcaDashboard/static/css/main.3633a8ad.chunk.css.map",
-    "static/js/2.0dd8eaa8.chunk.js.LICENSE.txt": "/OrcaDashboard/static/js/2.0dd8eaa8.chunk.js.LICENSE.txt",
-    "static/media/style.css": "/OrcaDashboard/static/media/CircularStd-Medium.4fcdd97f.otf",
-    "static/media/user.png": "/OrcaDashboard/static/media/user.6db09181.png"
+    "static/css/2.129d217f.chunk.css.map": "/OrcaDashboard/static/css/2.129d217f.chunk.css.map",
+    "static/css/main.0a7e4a0b.chunk.css.map": "/OrcaDashboard/static/css/main.0a7e4a0b.chunk.css.map",
+    "static/js/2.52e05c3e.chunk.js.LICENSE.txt": "/OrcaDashboard/static/js/2.52e05c3e.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/OrcaDashboard/static/media/CircularStd-Medium.4fcdd97f.otf"
   },
   "entrypoints": [
-    "static/js/runtime-main.3248cb2e.js",
-    "static/css/2.9c5146eb.chunk.css",
-    "static/js/2.0dd8eaa8.chunk.js",
-    "static/css/main.3633a8ad.chunk.css",
-    "static/js/main.d68bb324.chunk.js"
+    "static/js/runtime-main.d7192019.js",
+    "static/css/2.129d217f.chunk.css",
+    "static/js/2.52e05c3e.chunk.js",
+    "static/css/main.0a7e4a0b.chunk.css",
+    "static/js/main.8cdd945d.chunk.js"
   ]
 }
