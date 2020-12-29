@@ -14,10 +14,11 @@
       "x": {
         "field": "date_time",
         "type": "temporal",
-        "timeUnit": "yearmonthdatehoursminutes",
+        "timeUnit": {"unit":"yearmonthdatehoursminutes","step": 15},
         "scale": {"type": "utc"},
         "axis": {"labelAngle": 15},
-        "title": "Date-time"
+        "title": "Date-time",
+        "band": 0.5,
       },
       "y": {"field": "calls", "type": "quantitative", "title": "Calls per 15 minutes"},
       "color": {

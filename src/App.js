@@ -109,15 +109,15 @@ class App extends Component {
         fwCalls += parseInt(arr[i].Fin_whale);
         otCalls += parseInt(arr[i].Other);
     }
-    var bwCallsinhr = formatNum((bwCalls / count) * 4);
-    var fwCallsinhr = formatNum((fwCalls / count) * 4);
-    var otCallsinhr = formatNum((otCalls / count) * 4);
+    var bwCallsinhr = ((bwCalls / count) * 4).toFixed(2);
+    var fwCallsinhr = ((fwCalls / count) * 4).toFixed(2);
+    var otCallsinhr = ((otCalls / count) * 4).toFixed(2);
 
     var totalCallsinhr = parseInt(bwCallsinhr) + parseInt(fwCallsinhr) + parseInt(otCallsinhr) ;
 
-    piearr.push( {"category": "Blue whale", "calls": formatNum((bwCallsinhr/totalCallsinhr)*100)});
-    piearr.push( {"category": "Fin whale", "calls": formatNum((fwCallsinhr/totalCallsinhr)*100)});
-    piearr.push( {"category": "Other sounds", "calls": formatNum((otCallsinhr/totalCallsinhr)*100)});
+    piearr.push( {"category": "Blue whale", "calls": ((bwCallsinhr/totalCallsinhr)*100).toFixed(2)});
+    piearr.push( {"category": "Fin whale", "calls": ((fwCallsinhr/totalCallsinhr)*100).toFixed(2)});
+    piearr.push( {"category": "Other sounds", "calls": ((otCallsinhr/totalCallsinhr)*100).toFixed(2)});
 
     console.log(piearr);
 
