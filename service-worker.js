@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/OrcaDashboard/precache-manifest.950aa30cf0507af206402a7cd9bdb4b2.js"
+  "/OrcaDashboard/precache-manifest.a772944640b14f268dc3454d365fcdfb.js"
 );
 
 self.addEventListener('message', (event) => {
