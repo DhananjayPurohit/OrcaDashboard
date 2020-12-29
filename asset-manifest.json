@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/OrcaDashboard/static/css/main.0a7e4a0b.chunk.css",
-    "main.js": "/OrcaDashboard/static/js/main.b6e89cf7.chunk.js",
-    "main.js.map": "/OrcaDashboard/static/js/main.b6e89cf7.chunk.js.map",
+    "main.js": "/OrcaDashboard/static/js/main.bc2b99d2.chunk.js",
+    "main.js.map": "/OrcaDashboard/static/js/main.bc2b99d2.chunk.js.map",
     "runtime-main.js": "/OrcaDashboard/static/js/runtime-main.d7192019.js",
     "runtime-main.js.map": "/OrcaDashboard/static/js/runtime-main.d7192019.js.map",
     "static/css/2.129d217f.chunk.css": "/OrcaDashboard/static/css/2.129d217f.chunk.css",
     "static/js/2.52e05c3e.chunk.js": "/OrcaDashboard/static/js/2.52e05c3e.chunk.js",
     "static/js/2.52e05c3e.chunk.js.map": "/OrcaDashboard/static/js/2.52e05c3e.chunk.js.map",
     "index.html": "/OrcaDashboard/index.html",
-    "precache-manifest.a772944640b14f268dc3454d365fcdfb.js": "/OrcaDashboard/precache-manifest.a772944640b14f268dc3454d365fcdfb.js",
+    "precache-manifest.14794825a0154e9ac3fe7e6bc8fe39f2.js": "/OrcaDashboard/precache-manifest.14794825a0154e9ac3fe7e6bc8fe39f2.js",
     "service-worker.js": "/OrcaDashboard/service-worker.js",
     "static/css/2.129d217f.chunk.css.map": "/OrcaDashboard/static/css/2.129d217f.chunk.css.map",
     "static/css/main.0a7e4a0b.chunk.css.map": "/OrcaDashboard/static/css/main.0a7e4a0b.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.129d217f.chunk.css",
     "static/js/2.52e05c3e.chunk.js",
     "static/css/main.0a7e4a0b.chunk.css",
-    "static/js/main.b6e89cf7.chunk.js"
+    "static/js/main.bc2b99d2.chunk.js"
   ]
 }
