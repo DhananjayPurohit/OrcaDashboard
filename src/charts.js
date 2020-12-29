@@ -70,7 +70,7 @@
       },
       {
         "name": "y",
-        "type": "linear",
+        "type": "point",
         "round": true,
         "nice": true,
         "zero": false,
@@ -174,7 +174,7 @@
       },
       {
         "name": "y",
-        "type": "linear",
+        "type": "point",
         "round": true,
         "nice": true,
         "zero": false,

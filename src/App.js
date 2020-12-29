@@ -37,7 +37,7 @@ class App extends Component {
     const diffindaysfromstart=(weekstartDate.getTime()-startDate.getTime())/(1000 * 3600 * 24);
     const diffindaysfromend=(weekendDate.getTime()-startDate.getTime())/(1000 * 3600 * 24);
     console.log(((diffindaysfromstart)*multifactor+1)+" "+((diffindaysfromend+1)*multifactor));
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.REACT_APP_spreadsheetId}/values:batchGet?ranges=Sheet1!A${(diffindaysfromstart)*multifactor+1}:D${(diffindaysfromend+1)*multifactor}&majorDimension=ROWS&key=${process.env.REACT_APP_apiKey}`;
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${process.env.REACT_APP_spreadsheetId}/values:batchGet?ranges=Sheet1!A${(diffindaysfromstart)*multifactor+2}:D${(diffindaysfromend+1)*multifactor+1}&majorDimension=ROWS&key=${process.env.REACT_APP_apiKey}`;
     fetch(url)
       .then(response => response.json())
       .then(data => {
