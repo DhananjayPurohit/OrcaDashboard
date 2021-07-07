@@ -13,7 +13,7 @@ async function getVisual() {
 		  })
 
 		await page.goto(URL)
-		const stories = await page.$$eval('a', anchors => { return anchors.map(anchor => anchor.href).slice(5) })
+		const stories = await page.$$eval('a', anchors => { return anchors.map(anchor => anchor.href) })
 		console.log(stories)
 		const jsonString = JSON.stringify(stories)
 		fs.writeFile('./links.json', jsonString, err => {

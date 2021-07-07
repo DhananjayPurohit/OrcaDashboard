@@ -1,6 +1,20 @@
 const puppeteer = require("puppeteer");
 const { GoogleSpreadsheet } = require("google-spreadsheet");
 
+function formatDate(date) {
+  var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+  if (month.length < 2) 
+      month = '0' + month;
+  if (day.length < 2) 
+      day = '0' + day;
+
+  return [year, month, day].join('');
+}
+
 module.exports = async function (context, myTimer) {
     var timeStamp = new Date().toISOString();
     
@@ -26,8 +40,12 @@ module.exports = async function (context, myTimer) {
         console.log(doc.title);
     
         const sheet = doc.sheetsByIndex[0];
+
+        var dateObj = new Date();
+        dateObj.setDate(dateObj.getDate()-1);
         
-        const url='http://dcs.whoi.edu/sb1119/sb1119_buoy_html/sb1119_buoy_summary.html#table';
+        const url=`http://dcs.whoi.edu/sb1119/sb1119_buoy_html/sb1119_buoy_summary_${formatDate(dateObj)}.html#table`;
+        console.log(url);
         await page.goto(url,{waitUntil: 'load', timeout: 0})
             const data =await page.$$eval("td", (anchors) => {
               return anchors.map((anchor) => anchor.textContent);
