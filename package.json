@@ -21,7 +21,7 @@
     "react-scripts": "3.4.0",
     "react-vega": "^7.2.1",
     "styled-components": "^5.0.1",
-    "vega": "^5.10.0",
+    "vega": "^5.22.1",
     "vega-lite": "^4.7.0"
   },
   "scripts": {
